@@ -1,0 +1,70 @@
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(-45deg,#ff6ec4,#7873f5,#42e695,#ffe29f);
+background-size:400% 400%;
+animation:gradient 10s ease infinite;
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+.container{
+padding:40px;
+position:relative;
+z-index:2;
+}
+
+h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+#message{
+font-size:22px;
+max-width:700px;
+margin:auto;
+}
+
+.gallery{
+margin-top:40px;
+}
+
+.photo{
+width:220px;
+border-radius:20px;
+margin:15px;
+opacity:0;
+transform:scale(0.5) rotate(-20deg);
+animation:photoAnim 2s forwards;
+}
+
+.photo:nth-child(1){animation-delay:1s}
+.photo:nth-child(2){animation-delay:2s}
+.photo:nth-child(3){animation-delay:3s}
+.photo:nth-child(4){animation-delay:4s}
+
+@keyframes photoAnim{
+to{
+opacity:1;
+transform:scale(1) rotate(0);
+}
+}
+
+.photo:hover{
+transform:scale(1.2) rotate(5deg);
+transition:0.5s;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+pointer-events:none;
+}
